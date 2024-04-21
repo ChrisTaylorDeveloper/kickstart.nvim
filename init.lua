@@ -98,8 +98,41 @@ vim.g.have_nerd_font = false
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+vim.opt.swapfile = false
+vim.opt.fixendofline = false
+
+function _G.MyFoldText()
+  return ' '
+end
+vim.opt.foldtext = 'v:lua.MyFoldText()'
+
+-- :[Sp]ell
+vim.api.nvim_create_user_command('Sp', function()
+  if true == vim.opt.spell then
+    vim.opt.spell = false
+    print 'spellcheck off'
+  else
+    vim.opt.spell = true
+    vim.opt.spelllang = 'en_gb'
+    print 'spellcheck on'
+  end
+end, {})
+
+-- :[Wr]ap
+vim.api.nvim_create_user_command('Wr', function()
+  if 'wrap' == vim.opt.wrap then
+    vim.opt.wrap = false
+    vim.opt.linebreak = false
+    print 'wrap off'
+  else
+    vim.opt.wrap = true
+    vim.opt.linebreak = true
+    print 'wrap on'
+  end
+end, {})
+
 -- Make line numbers default
-vim.opt.number = true
+vim.opt.number = false
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
 -- vim.opt.relativenumber = true
@@ -149,13 +182,31 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.inccommand = 'split'
 
 -- Show which line your cursor is on
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 0
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
+
+vim.keymap.set('n', '<Leader>O', 'O<Esc>j', { desc = 'Create new line above.' })
+vim.keymap.set('n', '<Leader>o', 'o<Esc>k', { desc = 'Create new line below.' })
+vim.keymap.set('n', '<Leader>S', 'S<Esc>', { desc = 'Empty line, stay in normal mode.' })
+
+vim.keymap.set({ 'n', 'i', 'v' }, '<A-7>', '<cmd> resize -1 <cr>')
+vim.keymap.set({ 'n', 'i', 'v' }, '<A-8>', '<cmd> resize +1 <cr>')
+vim.keymap.set({ 'n', 'i', 'v' }, '<A-9>', '<cmd> vertical resize -1 <cr>')
+vim.keymap.set({ 'n', 'i', 'v' }, '<A-0>', '<cmd> vertical resize +1 <cr>')
+
+vim.keymap.set('i', '<A-j>', '<Esc>:m .+1<CR>==gi', { desc = 'Move line down, in Insert mode.' })
+vim.keymap.set('i', '<A-k>', '<Esc>:m .-2<CR>==gi', { desc = 'Move line up, in Insert mode.' })
+
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { desc = 'Move line down, in Normal mode.' })
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { desc = 'Move line up, in Normal mode.' })
+
+vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv-gv", { desc = 'Move line down, in Visual mode.' })
+vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv-gv", { desc = 'Move line up, in Visual mode.' })
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
@@ -204,6 +255,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.api.nvim_create_autocmd('BufRead', {
+  pattern = 'notes.txt',
+  desc = 'Set the foldmethod for my notes.txt file',
+  callback = function()
+    print 'Setting foldmethod=indent for notes.txt'
+    vim.opt.foldmethod = 'indent'
+  end,
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -236,6 +296,30 @@ require('lazy').setup({
   --
   --  This is equivalent to:
   --    require('Comment').setup({})
+
+  {
+    'kevinhwang91/rnvimr',
+    config = function()
+      vim.keymap.set('n', '<leader>l', function()
+        vim.api.nvim_command 'RnvimrToggle'
+      end, {})
+    end,
+  },
+
+  { 'pocco81/auto-save.nvim', opts = {} },
+
+  {
+    'projekt0n/github-nvim-theme',
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      require('github-theme').setup {
+        -- ...
+      }
+
+      vim.cmd 'colorscheme github_light'
+    end,
+  },
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
@@ -737,24 +821,6 @@ require('lazy').setup({
           { name = 'path' },
         },
       }
-    end,
-  },
-
-  { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
-    --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    init = function()
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
-
-      -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
     end,
   },
 
