@@ -304,6 +304,8 @@ require('lazy').setup({
     end,
   },
 
+  { 'tpope/vim-vinegar' },
+
   { 'pocco81/auto-save.nvim', opts = {} },
 
   {
