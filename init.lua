@@ -119,15 +119,14 @@ end, {})
 
 -- :[Wr]ap
 vim.api.nvim_create_user_command('Wr', function()
-  if 'wrap' == vim.opt.wrap then
-    vim.opt.wrap = false
-    vim.opt.linebreak = false
-    print 'wrap off'
-  else
-    vim.opt.wrap = true
-    vim.opt.linebreak = true
-    print 'wrap on'
-  end
+  vim.opt.wrap = true
+  vim.opt.linebreak = true
+end, {})
+
+-- :[N]o [w]rap
+vim.api.nvim_create_user_command('Nw', function()
+  vim.opt.wrap = false
+  vim.opt.linebreak = false
 end, {})
 
 -- Make line numbers default
