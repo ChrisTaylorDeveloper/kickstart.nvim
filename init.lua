@@ -108,14 +108,13 @@ vim.opt.foldtext = 'v:lua.MyFoldText()'
 
 -- :[Sp]ell
 vim.api.nvim_create_user_command('Sp', function()
-  if true == vim.opt.spell then
-    vim.opt.spell = false
-    print 'spellcheck off'
-  else
-    vim.opt.spell = true
-    vim.opt.spelllang = 'en_gb'
-    print 'spellcheck on'
-  end
+  vim.opt.spell = true
+  vim.opt.spelllang = 'en_gb'
+end, {})
+
+-- :[N]o [s]pell
+vim.api.nvim_create_user_command('Ns', function()
+  vim.opt.spell = false
 end, {})
 
 -- :[Wr]ap
