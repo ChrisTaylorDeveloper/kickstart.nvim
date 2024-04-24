@@ -310,6 +310,10 @@ require('lazy').setup({
 
   { 'tpope/vim-vinegar' },
 
+  { 'tpope/vim-capslock' },
+
+  { 'ChrisTaylorDeveloper/semi-colon.nvim' },
+
   { 'pocco81/auto-save.nvim', opts = {} },
 
   {
