@@ -299,15 +299,6 @@ require('lazy').setup({
   --  This is equivalent to:
   --    require('Comment').setup({})
 
-  {
-    'kevinhwang91/rnvimr',
-    config = function()
-      vim.keymap.set('n', '<leader>l', function()
-        vim.api.nvim_command 'RnvimrToggle'
-      end, {})
-    end,
-  },
-
   { 'tpope/vim-vinegar' },
 
   { 'tpope/vim-capslock' },
