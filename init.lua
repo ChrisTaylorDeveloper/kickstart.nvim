@@ -101,6 +101,15 @@ vim.g.have_nerd_font = true
 vim.opt.swapfile = false
 vim.opt.fixendofline = false
 
+-- num cols of whitespace a \t is worth
+vim.opt.tabstop=4
+-- num cols of whitespace for a “level of indentation”
+vim.opt.shiftwidth=4
+-- num cols of whitespace for tab or backspace keypress
+vim.opt.softtabstop=4
+-- do / do not expand tab keypresses into spaces
+vim.opt.expandtab=true
+
 function _G.MyFoldText()
   return ' '
 end
