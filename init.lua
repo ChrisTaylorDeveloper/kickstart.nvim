@@ -308,9 +308,31 @@ require('lazy').setup({
   --  This is equivalent to:
   --    require('Comment').setup({})
 
-  { 'tpope/vim-vinegar' },
+  { 'lambdalisue/vim-suda' },
+
+  {
+      's1n7ax/nvim-window-picker',
+      name = 'window-picker',
+      event = 'VeryLazy',
+      version = '2.*',
+      config = function()
+          require'window-picker'.setup()
+      end,
+  },
+
+  {
+    'akinsho/bufferline.nvim',
+    version = "*",
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    config = function()
+        vim.opt.termguicolors = true
+        require'bufferline'.setup()
+    end,
+  },
 
   { 'tpope/vim-capslock' },
+
+  { 'tpope/vim-surround' },
 
   { 'ChrisTaylorDeveloper/semi-colon.nvim' },
 
@@ -745,6 +767,10 @@ require('lazy').setup({
   --   },
   -- },
 
+  {
+    'hrsh7th/cmp-buffer'
+  },
+
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
@@ -851,7 +877,7 @@ require('lazy').setup({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
-          { name = 'buffer' },
+          { name = 'buffer', keyword_length = 3 },
         },
       }
     end,
@@ -977,7 +1003,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
