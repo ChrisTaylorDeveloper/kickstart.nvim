@@ -119,27 +119,27 @@ vim.opt.foldtext = 'v:lua.MyFoldText()'
 vim.api.nvim_create_user_command('Sp', function()
   vim.opt.spell = true
   vim.opt.spelllang = 'en_gb'
-  print 'spell on'
+  -- print 'spell on'
 end, {})
 
 -- :[N]o [s]pell
 vim.api.nvim_create_user_command('Ns', function()
   vim.opt.spell = false
-  print 'spell off'
+  -- print 'spell off'
 end, {})
 
 -- :[Wr]ap
 vim.api.nvim_create_user_command('Wr', function()
   vim.opt.wrap = true
   vim.opt.linebreak = true
-  print 'wrap on'
+  -- print 'wrap on'
 end, {})
 
 -- :[N]o [w]rap
 vim.api.nvim_create_user_command('Nw', function()
   vim.opt.wrap = false
   vim.opt.linebreak = false
-  print 'wrap off'
+  -- print 'wrap off'
 end, {})
 
 -- Make line numbers default
