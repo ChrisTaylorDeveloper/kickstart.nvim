@@ -771,6 +771,10 @@ require('lazy').setup({
     'hrsh7th/cmp-buffer'
   },
 
+  {
+    'hrsh7th/cmp-path'
+  },
+
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
