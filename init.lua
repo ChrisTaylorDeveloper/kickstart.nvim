@@ -270,7 +270,7 @@ vim.api.nvim_create_autocmd('BufRead', {
   pattern = 'notes.txt',
   desc = 'Set the foldmethod for my notes.txt file',
   callback = function()
-    print 'Setting foldmethod=indent for notes.txt'
+    -- print 'Setting foldmethod=indent for notes.txt'
     vim.opt.foldmethod = 'indent'
   end,
 })
