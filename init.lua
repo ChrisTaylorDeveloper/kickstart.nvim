@@ -312,31 +312,31 @@ require('lazy').setup({
   { 'lambdalisue/vim-suda' },
 
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    'catppuccin/nvim',
+    name = 'catppuccin',
     priority = 1000,
-    init = function ()
+    init = function()
       vim.cmd.colorscheme 'catppuccin-latte'
-    end
+    end,
   },
 
   {
-      's1n7ax/nvim-window-picker',
-      name = 'window-picker',
-      event = 'VeryLazy',
-      version = '2.*',
-      config = function()
-          require'window-picker'.setup()
-      end,
+    's1n7ax/nvim-window-picker',
+    name = 'window-picker',
+    event = 'VeryLazy',
+    version = '2.*',
+    config = function()
+      require('window-picker').setup()
+    end,
   },
 
   {
     'akinsho/bufferline.nvim',
-    version = "*",
+    version = '*',
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
-        vim.opt.termguicolors = true
-        require'bufferline'.setup()
+      vim.opt.termguicolors = true
+      require('bufferline').setup()
     end,
   },
 
