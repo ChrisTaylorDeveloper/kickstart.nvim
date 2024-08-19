@@ -342,10 +342,6 @@ require('lazy').setup({
 
   { 'tpope/vim-capslock' },
 
-  { 'tpope/vim-surround' },
-
-  { 'ChrisTaylorDeveloper/semi-colon.nvim' },
-
   {
     'ggandor/leap.nvim',
     config = function()
