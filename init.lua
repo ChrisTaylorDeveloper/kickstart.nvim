@@ -352,6 +352,10 @@ require('lazy').setup({
     end,
   },
 
+  { 'hrsh7th/cmp-buffer' },
+
+  { 'hrsh7th/cmp-path' },
+
   { 'pocco81/auto-save.nvim', opts = {} },
 
   -- "gc" to comment visual regions/lines
@@ -829,14 +833,6 @@ require('lazy').setup({
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
       },
     },
-  },
-
-  {
-    'hrsh7th/cmp-buffer',
-  },
-
-  {
-    'hrsh7th/cmp-path',
   },
 
   { -- Autocompletion
