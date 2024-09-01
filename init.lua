@@ -100,6 +100,7 @@ vim.g.have_nerd_font = true
 
 vim.opt.swapfile = false
 vim.opt.fixendofline = false
+vim.opt.hlsearch = true
 
 -- num cols of whitespace a \t is worth
 vim.opt.tabstop = 4
@@ -221,7 +222,6 @@ vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv-gv", { desc = 'Move line up, in Visu
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
-vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
