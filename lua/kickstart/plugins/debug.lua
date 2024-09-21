@@ -34,6 +34,7 @@ return {
       { '<F2>', dap.step_over, desc = 'Debug: Step Over' },
       { '<F3>', dap.step_out, desc = 'Debug: Step Out' },
       { '<leader>b', dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
+      { '<leader>gb', dap.run_to_cursor, desc = 'Debug: Run to cursor' },
       {
         '<leader>B',
         function()
@@ -92,6 +93,24 @@ return {
     dap.listeners.after.event_initialized['dapui_config'] = dapui.open
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
+
+    dap.adapters.php = {
+      type = 'executable',
+      command = 'node',
+      args = { '/home/chris/vscode-php-debug/out/phpDebug.js' },
+    }
+
+    dap.configurations.php = {
+      {
+        type = 'php',
+        request = 'launch',
+        name = 'Listen for Xdebug',
+        port = 9003,
+        pathMappings = {
+          ['/var/www/html/'] = '/home/chris/act/repos/wasabi/pitchrate/pitchrate',
+        },
+      },
+    }
 
     -- Install golang specific config
     require('dap-go').setup {
