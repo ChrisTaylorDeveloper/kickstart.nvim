@@ -330,8 +330,6 @@ require('lazy').setup({
     end,
   },
 
-  { 'tpope/vim-capslock' },
-
   { 'aklt/plantuml-syntax' },
 
   {
