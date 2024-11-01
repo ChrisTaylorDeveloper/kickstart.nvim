@@ -320,8 +320,6 @@ require('lazy').setup({
     end,
   },
 
-  { 'aklt/plantuml-syntax' },
-
   {
     'ggandor/leap.nvim',
     config = function()
