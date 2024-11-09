@@ -727,7 +727,12 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
-        intelephense = {},
+        intelephense = {
+          root_dir = function()
+            -- Hardcode a path here.
+            -- return '/home/chris/cgt/IMN/symfony-extranet'
+          end,
+        },
 
         docker_compose_language_service = {},
         dockerls = {},
