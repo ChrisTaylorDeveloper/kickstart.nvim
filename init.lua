@@ -1014,17 +1014,13 @@ require('lazy').setup({
       end
 
       ---@diagnostic disable-next-line: duplicate-set-field
-      statusline.section_diagnostics = function()
-        return ''
-      end
-
-      ---@diagnostic disable-next-line: duplicate-set-field
-      statusline.section_lsp = function()
-        return ''
-      end
-
-      ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_fileinfo = function()
+        return ''
+      end
+
+      ---@diagnostic disable-next-line: duplicate-set-field
+      statusline.section_searchcount = function()
+        -- Search count appears in command line.
         return ''
       end
 
