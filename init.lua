@@ -329,10 +329,6 @@ require('lazy').setup({
   --   end,
   -- },
 
-  { 'hrsh7th/cmp-buffer' },
-
-  { 'hrsh7th/cmp-path' },
-
   { 'pocco81/auto-save.nvim', opts = {} },
 
   -- "gc" to comment visual regions/lines
@@ -862,6 +858,7 @@ require('lazy').setup({
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'hrsh7th/cmp-buffer',
     },
     config = function()
       -- See `:help cmp`
