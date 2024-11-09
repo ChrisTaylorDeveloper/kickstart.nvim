@@ -128,7 +128,8 @@ return {
         name = 'Listen for Xdebug',
         port = 9003,
         pathMappings = {
-          ['/var/www/html/'] = '/home/chris/act/repos/wasabi/pitchrate/pitchrate',
+          -- Example config.
+          -- ['/var/www/html/'] = '/home/chris/cgt/PUK/wordpress',
         },
       },
     }
