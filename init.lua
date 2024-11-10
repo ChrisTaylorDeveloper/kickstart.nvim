@@ -923,7 +923,7 @@ require('lazy').setup({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
-          { name = 'buffer', keyword_length = 2 },
+          { name = 'buffer' },
         },
       }
     end,
