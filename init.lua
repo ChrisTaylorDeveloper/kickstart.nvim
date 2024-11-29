@@ -312,6 +312,8 @@ require('lazy').setup({
 
   { 'tpope/vim-vinegar' },
 
+  { 'numToStr/Comment.nvim', opts = {} },
+
   { 'lambdalisue/vim-suda' },
 
   {
