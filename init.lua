@@ -310,6 +310,8 @@ require('lazy').setup({
   -- Use `opts = {}` to force a plugin to be loaded.
   --
 
+  { 'tpope/vim-vinegar' },
+
   { 'lambdalisue/vim-suda' },
 
   {
