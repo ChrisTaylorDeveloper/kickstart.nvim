@@ -317,6 +317,21 @@ require('lazy').setup({
   { 'lambdalisue/vim-suda' },
 
   {
+    dir = '~/cgt/CTD/swissarmy.nvim',
+    keys = {
+      {
+        '<leader>n',
+        function()
+          require('swissarmy').open_notes()
+        end,
+        mode = '',
+        desc = 'Open [n]otes.txt',
+      },
+    },
+    opts = { name = 'christopher' },
+  },
+
+  {
     's1n7ax/nvim-window-picker',
     name = 'window-picker',
     event = 'VeryLazy',
