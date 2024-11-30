@@ -1095,5 +1095,16 @@ require('lazy').setup({
 
 -- For numToStr/Comment.nvim
 require('Comment').setup()
+
+require('catppuccin').setup {
+  custom_highlights = function(colors)
+    return {
+      WinSeparator = { fg = colors.flamingo },
+    }
+  end,
+}
+
+vim.cmd.colorscheme 'catppuccin-latte'
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
