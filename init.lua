@@ -271,6 +271,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.api.nvim_create_autocmd('BufRead', {
+  desc = 'Set filetype xml for extension .axaml',
+  pattern = '*.axaml',
+  callback = function()
+    vim.bo.filetype = 'xml'
+  end,
+})
+
+vim.api.nvim_create_autocmd('BufRead', {
   pattern = 'notes.txt',
   desc = 'Set the foldmethod for my notes.txt file',
   callback = function()
