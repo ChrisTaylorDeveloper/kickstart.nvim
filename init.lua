@@ -114,7 +114,7 @@ vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
 function _G.MyFoldText()
-  return ' '
+  return ''
 end
 vim.opt.foldtext = 'v:lua.MyFoldText()'
 
