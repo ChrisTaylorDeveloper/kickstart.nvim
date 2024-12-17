@@ -762,6 +762,10 @@ require('lazy').setup({
             -- Hardcode a path here.
             -- return '/home/chris/cgt/IMN/symfony-extranet'
           end,
+          -- environment = {
+          --   -- Check this setting works!
+          --   phpVersion = '7.4.0',
+          -- },
         },
 
         docker_compose_language_service = {},
