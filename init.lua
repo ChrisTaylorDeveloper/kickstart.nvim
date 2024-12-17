@@ -113,6 +113,8 @@ vim.opt.softtabstop = 4
 -- do / do not expand tab keypresses into spaces
 vim.opt.expandtab = true
 
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 function _G.MyFoldText()
   return ''
 end
