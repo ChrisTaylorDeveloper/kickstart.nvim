@@ -134,6 +134,24 @@ return {
       },
     }
 
+    dap.adapters.coreclr = {
+      type = 'executable',
+      command = '/home/chris/.local/share/nvim/mason/packages/netcoredbg/netcoredbg',
+      args = { '--interpreter=vscode' },
+    }
+
+    dap.configurations.cs = {
+      {
+        type = 'coreclr',
+        name = 'launch - netcoredbg',
+        request = 'launch',
+        program = function()
+          -- prompt for user input
+          return vim.fn.input('Enter path to dll: ', vim.fn.getcwd() .. '/bin/Debug/', 'file')
+        end,
+      },
+    }
+
     -- Install golang specific config
     require('dap-go').setup {
       delve = {
