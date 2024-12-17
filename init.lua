@@ -322,6 +322,20 @@ require('lazy').setup({
 
   { 'tpope/vim-vinegar' },
 
+  {
+    'hedyhli/outline.nvim',
+    config = function()
+      vim.keymap.set('n', '<leader>e', '<cmd>Outline<CR>', { desc = 'Toggle [S]ymbols [O]utline' })
+      require('outline').setup {
+        outline_window = {
+          width = 75,
+          show_cursorline = true,
+          hide_cursor = true,
+        },
+      }
+    end,
+  },
+
   { 'numToStr/Comment.nvim', opts = {} },
 
   { 'lambdalisue/vim-suda' },
