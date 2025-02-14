@@ -1147,6 +1147,10 @@ require('lazy').setup({
   },
 })
 
+-- My examples.
+-- require('swissarmy').msg()
+-- require('swissarmy.somedir.france').msg()
+-- require('swissarmy.anotherdir.england').msg()
 
 -- For numToStr/Comment.nvim
 require('Comment').setup()
