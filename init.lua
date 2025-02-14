@@ -893,6 +893,7 @@ require('lazy').setup({
         lua = { 'stylua' },
         -- https://github.com/DavidAnson/markdownlint
         markdown = { 'markdownlint' },
+        tex = { 'latexindent' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
