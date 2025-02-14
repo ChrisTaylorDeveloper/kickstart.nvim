@@ -1163,6 +1163,8 @@ require('catppuccin').setup {
   end,
 }
 
+require('leap').create_default_mappings()
+
 local theme = {
   fill = 'TabLineFill',
   -- Also you can do this: fill = { fg='#f2e9de', bg='#907aa9', style='italic' }
