@@ -125,25 +125,6 @@ return {
       args = { '/home/chris/vscode-php-debug/out/phpDebug.js' },
     }
 
-    -- Assume I'm using the launch.json file instead ??
-    -- dap.configurations.php = {
-    --   {
-    --     type = 'php',
-    --     request = 'launch',
-    --     name = 'Listen for Xdebug',
-    --     -- For Xdebug 3 I assume
-    --     -- port = 9003,
-    --     -- For earlier Xdebug, php 5.6
-    --     port = 9000,
-    --     pathMappings = {
-    --       -- Example config.
-    --       -- ['/var/www/html/'] = '/home/chris/cgt/PUK/wordpress',
-    --       -- ['/var/www/html/'] = '/home/chris/cgt/TDL/websites-api',
-    --       ['/var/www/html/'] = '/home/chris/cgt/TDL/websites-api-xdebug-check',
-    --     },
-    --   },
-    -- }
-
     dap.adapters.coreclr = {
       type = 'executable',
       command = '/home/chris/.local/share/nvim/mason/packages/netcoredbg/netcoredbg',
