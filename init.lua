@@ -364,8 +364,16 @@ require('lazy').setup({
         function()
           require('swissarmy').open_notes()
         end,
-        mode = '',
+        mode = 'n',
         desc = 'Open [n]otes.txt',
+      },
+      {
+        '<leader>c',
+        function()
+          require('swissarmy').open_nvim_conf()
+        end,
+        mode = 'n',
+        desc = 'Open Neovim [c]onfig',
       },
     },
     opts = { name = 'christopher' },
