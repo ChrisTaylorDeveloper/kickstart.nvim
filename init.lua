@@ -325,6 +325,19 @@ require('lazy').setup({
 
   { 'tpope/vim-vinegar' },
 
+  { 'ChrisTaylorDeveloper/semi-colon.nvim' },
+
+  { 'ggandor/leap.nvim' },
+
+  {
+    'nanozuki/tabby.nvim',
+    -- event = 'VimEnter', -- if you want lazy load
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    config = function()
+      -- configs...
+    end,
+  },
+
   {
     'hedyhli/outline.nvim',
     config = function()
