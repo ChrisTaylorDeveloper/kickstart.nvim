@@ -877,6 +877,8 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        -- https://github.com/DavidAnson/markdownlint
+        markdown = { 'markdownlint' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
