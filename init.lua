@@ -98,6 +98,9 @@ vim.g.have_nerd_font = true
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+vim.o.showtabline = 2
+vim.opt.laststatus = 3
+
 vim.opt.wrap = false
 vim.opt.linebreak = false
 vim.opt.swapfile = false
