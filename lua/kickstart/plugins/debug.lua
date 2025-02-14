@@ -51,6 +51,8 @@ return {
     local dap = require 'dap'
     local dapui = require 'dapui'
 
+    require('dap.ext.vscode').load_launchjs()
+
     require('mason-nvim-dap').setup {
       -- Makes a best effort to setup the various debuggers with
       -- reasonable debug configurations
@@ -123,18 +125,24 @@ return {
       args = { '/home/chris/vscode-php-debug/out/phpDebug.js' },
     }
 
-    dap.configurations.php = {
-      {
-        type = 'php',
-        request = 'launch',
-        name = 'Listen for Xdebug',
-        port = 9003,
-        pathMappings = {
-          -- Example config.
-          -- ['/var/www/html/'] = '/home/chris/cgt/PUK/wordpress',
-        },
-      },
-    }
+    -- Assume I'm using the launch.json file instead ??
+    -- dap.configurations.php = {
+    --   {
+    --     type = 'php',
+    --     request = 'launch',
+    --     name = 'Listen for Xdebug',
+    --     -- For Xdebug 3 I assume
+    --     -- port = 9003,
+    --     -- For earlier Xdebug, php 5.6
+    --     port = 9000,
+    --     pathMappings = {
+    --       -- Example config.
+    --       -- ['/var/www/html/'] = '/home/chris/cgt/PUK/wordpress',
+    --       -- ['/var/www/html/'] = '/home/chris/cgt/TDL/websites-api',
+    --       ['/var/www/html/'] = '/home/chris/cgt/TDL/websites-api-xdebug-check',
+    --     },
+    --   },
+    -- }
 
     dap.adapters.coreclr = {
       type = 'executable',
