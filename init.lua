@@ -981,64 +981,6 @@ require('lazy').setup({
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-  {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    priority = 1000,
-  },
-
-  { 'tpope/vim-vinegar' },
-
-  { 'ChrisTaylorDeveloper/semi-colon.nvim' },
-
-  { 'ggandor/leap.nvim' },
-
-  {
-    'nanozuki/tabby.nvim',
-    -- event = 'VimEnter', -- if you want lazy load
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    config = function()
-      -- configs...
-    end,
-  },
-
-  { 'numToStr/Comment.nvim', opts = {} },
-
-  { 'lambdalisue/vim-suda' },
-
-  {
-    dir = '~/cgt/CTD/swissarmy.nvim',
-    keys = {
-      {
-        '<leader>n',
-        function()
-          require('swissarmy').open_notes()
-        end,
-        mode = 'n',
-        desc = 'Open [n]otes.txt',
-      },
-      {
-        '<leader>c',
-        function()
-          require('swissarmy').open_nvim_conf()
-        end,
-        mode = 'n',
-        desc = 'Open Neovim [c]onfig',
-      },
-    },
-    opts = { name = 'christopher' },
-  },
-
-  {
-    's1n7ax/nvim-window-picker',
-    name = 'window-picker',
-    event = 'VeryLazy',
-    version = '2.*',
-    config = function()
-      require('window-picker').setup()
-    end,
-  },
-
   { 'pocco81/auto-save.nvim', opts = {} },
 
   { -- Collection of various small independent plugins/modules
@@ -1146,7 +1088,7 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
