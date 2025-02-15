@@ -28,6 +28,8 @@ return {
 
   { 'lambdalisue/vim-suda' },
 
+  { 'pocco81/auto-save.nvim', opts = {} },
+
   {
     dir = '~/cgt/CTD/swissarmy.nvim',
     keys = {
