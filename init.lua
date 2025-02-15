@@ -971,6 +971,74 @@ require('lazy').setup({
     priority = 1000,
   },
 
+  { 'tpope/vim-vinegar' },
+
+  { 'ChrisTaylorDeveloper/semi-colon.nvim' },
+
+  { 'ggandor/leap.nvim' },
+
+  {
+    'nanozuki/tabby.nvim',
+    -- event = 'VimEnter', -- if you want lazy load
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    config = function()
+      -- configs...
+    end,
+  },
+
+  {
+    'hedyhli/outline.nvim',
+    config = function()
+      vim.keymap.set('n', '<leader>e', '<cmd>Outline<CR>', { desc = 'Toggle [S]ymbols [O]utline' })
+      require('outline').setup {
+        outline_window = {
+          width = 75,
+          show_cursorline = true,
+          hide_cursor = true,
+        },
+      }
+    end,
+  },
+
+  { 'numToStr/Comment.nvim', opts = {} },
+
+  { 'lambdalisue/vim-suda' },
+
+  {
+    dir = '~/cgt/CTD/swissarmy.nvim',
+    keys = {
+      {
+        '<leader>n',
+        function()
+          require('swissarmy').open_notes()
+        end,
+        mode = 'n',
+        desc = 'Open [n]otes.txt',
+      },
+      {
+        '<leader>c',
+        function()
+          require('swissarmy').open_nvim_conf()
+        end,
+        mode = 'n',
+        desc = 'Open Neovim [c]onfig',
+      },
+    },
+    opts = { name = 'christopher' },
+  },
+
+  {
+    's1n7ax/nvim-window-picker',
+    name = 'window-picker',
+    event = 'VeryLazy',
+    version = '2.*',
+    config = function()
+      require('window-picker').setup()
+    end,
+  },
+
+  { 'pocco81/auto-save.nvim', opts = {} },
+
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
   { -- Collection of various small independent plugins/modules
