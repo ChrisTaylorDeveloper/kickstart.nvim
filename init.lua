@@ -215,6 +215,8 @@ vim.keymap.set('n', '<Leader>O', 'O<Esc>j', { desc = 'Create new line above.' })
 vim.keymap.set('n', '<Leader>o', 'o<Esc>k', { desc = 'Create new line below.' })
 vim.keymap.set('n', '<Leader>S', 'S<Esc>', { desc = 'Empty line, stay in normal mode.' })
 
+vim.keymap.set('n', '<Leader>yy', '^vg_y0', { desc = '[Y]ank line, first to last non-blank char.' })
+
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode.' })
 
 vim.keymap.set({ 'n', 'i', 'v' }, '<A-7>', '<cmd> resize -1 <cr>')
