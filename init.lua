@@ -729,7 +729,7 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
-        omnisharp = {},
+        -- omnisharp = {},
 
         intelephense = {
           root_dir = function()
