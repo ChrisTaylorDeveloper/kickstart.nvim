@@ -40,7 +40,7 @@ return {
   { 'pocco81/auto-save.nvim', opts = {} },
 
   {
-    dir = '~/cgt/CTD/swissarmy.nvim',
+    dir = '~/ctd/repos/swissarmy.nvim',
     keys = {
       {
         '<leader>n',
