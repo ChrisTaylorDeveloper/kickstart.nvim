@@ -20,10 +20,6 @@ return {
     priority = 1000,
   },
 
-  { 'tpope/vim-vinegar' },
-
-  { 'ChrisTaylorDeveloper/semi-colon.nvim' },
-
   {
     'nanozuki/tabby.nvim',
     -- event = 'VimEnter', -- if you want lazy load
@@ -33,34 +29,9 @@ return {
     end,
   },
 
-  { 'numToStr/Comment.nvim', opts = {} },
-
   { 'lambdalisue/vim-suda' },
 
   { 'pocco81/auto-save.nvim', opts = {} },
-
-  {
-    dir = '~/ctd/repos/swissarmy.nvim',
-    keys = {
-      {
-        '<leader>n',
-        function()
-          require('swissarmy').open_notes()
-        end,
-        mode = 'n',
-        desc = 'Open [n]otes.txt',
-      },
-      {
-        '<leader>c',
-        function()
-          require('swissarmy').open_nvim_conf()
-        end,
-        mode = 'n',
-        desc = 'Open Neovim [c]onfig',
-      },
-    },
-    opts = { name = 'christopher' },
-  },
 
   {
     's1n7ax/nvim-window-picker',
