@@ -1026,22 +1026,15 @@ require('lazy').setup({
         return '%2l:%-2v'
       end
 
-      ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_git = function()
         return ''
       end
-
-      ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_diff = function()
         return ''
       end
-
-      ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_fileinfo = function()
         return ''
       end
-
-      ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_searchcount = function()
         -- Search count appears in command line.
         return ''
@@ -1051,7 +1044,6 @@ require('lazy').setup({
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
-
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
