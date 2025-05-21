@@ -20,15 +20,6 @@ return {
     priority = 1000,
   },
 
-  {
-    'nanozuki/tabby.nvim',
-    -- event = 'VimEnter', -- if you want lazy load
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    config = function()
-      -- configs...
-    end,
-  },
-
   { 'lambdalisue/vim-suda' },
 
   { 'pocco81/auto-save.nvim', opts = {} },
