@@ -1118,13 +1118,13 @@ require('lazy').setup({
   },
 })
 
-require('catppuccin').setup {
-  custom_highlights = function(colors)
-    return {
-      WinSeparator = { fg = colors.flamingo },
-    }
-  end,
-}
+-- require('catppuccin').setup {
+--   custom_highlights = function(colors)
+--     return {
+--       WinSeparator = { fg = colors.flamingo },
+--     }
+--   end,
+-- }
 
 vim.cmd.colorscheme 'catppuccin-latte'
 
