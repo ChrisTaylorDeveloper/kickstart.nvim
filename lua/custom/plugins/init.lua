@@ -3,6 +3,9 @@
 --
 -- See the kickstart.nvim README for more information
 return {
+
+  { 'akinsho/bufferline.nvim', version = '*', dependencies = 'nvim-tree/nvim-web-devicons' },
+
   {
     'lervag/vimtex',
     lazy = false, -- we don't want to lazy load VimTeX
