@@ -304,6 +304,15 @@ vim.api.nvim_create_autocmd('BufRead', {
   end,
 })
 
+vim.api.nvim_create_autocmd('BufRead', {
+  pattern = '/etc/hosts',
+  desc = 'Set syntax highlighting for /etc/hosts file.',
+  callback = function()
+    -- Only the 'bash' filetype seems to work!
+    vim.opt.filetype = 'bash'
+  end,
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
