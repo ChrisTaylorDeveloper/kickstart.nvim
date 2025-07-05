@@ -81,8 +81,6 @@ return {
     local dap = require 'dap'
     local dapui = require 'dapui'
 
-    require('dap.ext.vscode').load_launchjs()
-
     require('mason-nvim-dap').setup {
       -- Makes a best effort to setup the various debuggers with
       -- reasonable debug configurations
@@ -137,30 +135,6 @@ return {
     dap.listeners.after.event_initialized['dapui_config'] = dapui.open
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
-
-    dap.adapters.php = {
-      type = 'executable',
-      command = 'node',
-      args = { '/home/chris/vscode-php-debug/out/phpDebug.js' },
-    }
-
-    dap.adapters.coreclr = {
-      type = 'executable',
-      command = '/home/chris/.local/share/nvim/mason/packages/netcoredbg/netcoredbg',
-      args = { '--interpreter=vscode' },
-    }
-
-    dap.configurations.cs = {
-      {
-        type = 'coreclr',
-        name = 'launch - netcoredbg',
-        request = 'launch',
-        program = function()
-          -- prompt for user input
-          return vim.fn.input('Enter path to dll: ', vim.fn.getcwd() .. '/bin/Debug/', 'file')
-        end,
-      },
-    }
 
     -- Install golang specific config
     require('dap-go').setup {
