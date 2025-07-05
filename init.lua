@@ -1046,20 +1046,6 @@ require('lazy').setup({
         return '%2l:%-2v'
       end
 
-      statusline.section_git = function()
-        return ''
-      end
-      statusline.section_diff = function()
-        return ''
-      end
-      statusline.section_fileinfo = function()
-        return ''
-      end
-      statusline.section_searchcount = function()
-        -- Search count appears in command line.
-        return ''
-      end
-
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
