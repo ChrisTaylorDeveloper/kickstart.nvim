@@ -23,6 +23,8 @@ return {
     priority = 1000,
   },
 
+  { 'tpope/vim-sleuth' },
+
   { 'lambdalisue/vim-suda' },
 
   { 'pocco81/auto-save.nvim', opts = {} },
