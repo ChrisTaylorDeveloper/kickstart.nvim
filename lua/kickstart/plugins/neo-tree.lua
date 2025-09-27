@@ -14,6 +14,23 @@ return {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
+    default_component_configs = {
+      -- Do not show columns of info after file & directory names.
+      file_size = {
+        enabled = false,
+      },
+      type = {
+        enabled = false,
+      },
+      last_modified = {
+        enabled = false,
+      },
+      -- Do not show any file icons.
+      icon = {
+        provider = function() end,
+        default = '',
+      },
+    },
     filesystem = {
       filtered_items = {
         hide_dotfiles = false,
