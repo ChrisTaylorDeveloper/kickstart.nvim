@@ -221,6 +221,8 @@ vim.o.confirm = true
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+vim.api.nvim_set_keymap('n', '<leader>n', ':ASToggle<CR>', { desc = 'Toggle auto save.' })
+
 vim.keymap.set('n', '<Leader>O', 'O<Esc>j', { desc = 'Create new line above.' })
 vim.keymap.set('n', '<Leader>o', 'o<Esc>k', { desc = 'Create new line below.' })
 vim.keymap.set('n', '<Leader>S', 'S<Esc>', { desc = 'Empty line, stay in normal mode.' })
