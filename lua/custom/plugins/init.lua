@@ -6,6 +6,8 @@ return {
 
   { 'akinsho/bufferline.nvim', version = '*', dependencies = 'nvim-tree/nvim-web-devicons' },
 
+  { 'ChrisTaylorDeveloper/swissarmy.nvim', opts = { name = 'chris' } },
+
   -- {
   --   'ggandor/leap.nvim',
   --   config = function()
