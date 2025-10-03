@@ -8,12 +8,12 @@ return {
 
   { 'ChrisTaylorDeveloper/swissarmy.nvim', opts = { name = 'chris' } },
 
-  -- {
-  --   'ggandor/leap.nvim',
-  --   config = function()
-  --     require('leap').set_default_mappings()
-  --   end,
-  -- },
+  {
+    'ggandor/leap.nvim',
+    config = function()
+      require('leap').set_default_mappings()
+    end,
+  },
 
   -- For TS & Latex, tree-sitter CLI might need to be available globally on the system.
   -- See https://christaylordeveloper.co.uk/vim/neovim/treesitter/
